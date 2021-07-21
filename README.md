@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 localhost://4200
 
-## Development server
+## Usuarios para pruebas
 
 Los usuarios de prueba son 
 
