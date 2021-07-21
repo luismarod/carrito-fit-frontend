@@ -10,14 +10,14 @@ export class AuthService {
   usuario: Usuario = { email: '', password: '', admin: false, vip: false, fecha: '' };
   usuarios = [
     {
-      email: "correousuariocliente@mail.com",
+      email: "correousuarioclientevip@mail.com",
       vip: false,
       admin: false,
       password: "correousuario1",
       fecha: ''
     },
     {
-      email: "correousuariocliente@mail.com",
+      email: "correousuarioclientenovip@mail.com",
       vip: true,
       admin: false,
       password: "correousuario1",
