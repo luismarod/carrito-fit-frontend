@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TicketService } from '../../../services/ticket.service';
+import { AuthService } from '../../../services/auth.service';
 
 
 @Component({
@@ -21,7 +22,7 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
   vip: boolean = false;
   esPromo: boolean = false;
 
-  constructor(private activatedRoute: ActivatedRoute, private ticketService: TicketService) { }
+  constructor(private activatedRoute: ActivatedRoute, private ticketService: TicketService, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(param => {
@@ -31,6 +32,11 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
 
       this.calcularMonto(this.productos);
     })
+
+    let usuarioAutenticado = this.authService.getUsuarioAutenticado();
+
+    this.vip = usuarioAutenticado.vip;
+
   }
 
   ngOnDestroy(): void {
