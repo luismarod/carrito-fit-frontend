@@ -4,6 +4,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
+localhost://4200
+
+## Development server
+
 Los usuarios de prueba son 
 
       para compras vip
