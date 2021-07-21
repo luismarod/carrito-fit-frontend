@@ -1,0 +1,14 @@
+<div class="contenedor">
+    <div class="descripcion">
+        <img [src]="urlImg" alt="">
+        <p>{{nombre}}</p>
+    </div>
+
+    <div class="cantidad-precio">
+        <i class="fas fa-minus" (click)="onMinus()"></i>
+        <p>{{cantidad}}</p>
+        <i class="fas fa-plus" (click)="onPlus()"></i>
+        <p class="precio">{{precio * cantidad}}</p>
+        <i class="fas fa-trash fa-lg" (click)="onDelete()"></i>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="contenedor">
+    <div class="items" *ngIf="verDetalle">
+        <div class="item" *ngFor="let producto of productos">
+            <cart-item [nombre]="producto.nombre" [precio]="producto.precio" [id]="producto.id"
+                [cantidad]="producto.cantidad" (onMinusProduct)="onMinusProduct($event)"
+                (onPlusProduct)="agregarProducto($event)" (deleteProduct)="deleteProduct($event)">
+            </cart-item>
+        </div>
+    </div>
+    <div class="opciones">
+        <p><i class="fas fa-shopping-cart fa-lg"></i></p>
+        <p *ngIf="productos.length ==  0">Carrito Vacio</p>
+        <button class="button" *ngIf="productos.length > 0" (click)="verDetalle=!verDetalle">{{(verDetalle)? 'Ocultar
+            Detalle':
+            'Ver Detalle'}}</button>
+        <button class="button button-comprar"
+            routerLink="/client/shopping-cart/{{esPromo}}/{{productosString}}">Procesar tu
+            compra</button>
+    </div>
+</div>

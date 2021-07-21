@@ -1,0 +1,38 @@
+<div class="contenedor">
+    <div class="ticket">
+        <h1>Ticket de compra</h1>
+
+        <div class="items">
+            <div class="item" *ngFor="let producto of productos">
+                <cart-item [nombre]="producto.nombre" [precio]="producto.precio" [id]="producto.id"
+                    [cantidad]="producto.cantidad" (onMinusProduct)="onMinusProduct($event)"
+                    (onPlusProduct)="agregarProducto($event)" (deleteProduct)="deleteProduct($event)">
+                </cart-item>
+            </div>
+        </div>
+
+        <table>
+            <tr>
+                <td class="left">Subtotal</td>
+                <td class="right">{{subTotal}}$</td>
+            </tr>
+            <tr>
+                <td class="left descuento">Descuento</td>
+                <td class="right descuento">{{descuento}}$</td>
+            </tr>
+            <tr>
+                <th class="left">Total</th>
+                <th class="right">{{totalPrecio}}$</th>
+            </tr>
+            <tr>
+                <th><button class="button button-cancelar" routerLink="/client/home/{{esPromo}}">Cancelar</button></th>
+                <th><button class="button button-comprar" (click)="onComprar()">Comprar</button></th>
+            </tr>
+        </table>
+
+    </div>
+    <modal-compra-realizada *ngIf="comprado" [esPromo]="esPromo"></modal-compra-realizada>
+
+
+
+</div>

@@ -1,0 +1,45 @@
+.contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    
+    h1{
+        font-size: 2rem;
+        font-weight: bolder;
+    }
+
+
+    .ticket{
+        width: 50%;
+        margin: 0 auto;
+        padding: 3rem;
+        background-color: white;
+        text-align: center;
+
+        table{
+            width: 100%;
+
+            .left {
+                text-align: start;
+            }
+
+            .right{
+                text-align: end;
+            }
+
+            .descuento{
+                color: red;
+            }
+
+            th {
+                color: green;
+                font-size: 1.2rem;
+            }
+        }
+
+        .button-cancelar {
+            background-color: red;
+            color: white;
+        }
+    }
+
+}

@@ -1,0 +1,43 @@
+<div class="contenedor">
+    <div class="usuarios">
+        <h1 *ngIf="!verVip && !verNoVip">Listado de Usuarios</h1>
+        <h1 *ngIf="verVip">Listado de Usuarios Vip</h1>
+        <h1 *ngIf="verNoVip">Listado de Usuarios No Vip</h1>
+        <div class="botones">
+            <button class="button" (click)="onVerVip()">Ver Usuarios Vip</button>
+            <button class="button" (click)="onVerNoVip()">Ver Usuarios No Vip</button>
+            <button class="button" (click)="onVerTodos()">Ver todos los usuarios</button>
+        </div>
+        <div *ngIf="filtroMes">
+            <mat-form-field appearance="fill">
+                <mat-label>Filtrar por mes</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let mes of meses" [value]="mes.value" (click)="verMes(mes.value)">
+                        {{mes.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <table>
+            <tr>
+                <th></th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Vip</th>
+                <th>Fecha Cambio Categoria</th>
+            </tr>
+
+            <p *ngIf="usuarios && usuarios.length==0">No hay usuarios</p>
+
+            <tr *ngFor="let usuario of usuarios">
+                <td><img src="../../../../assets/icon-usuario.png"></td>
+                <td>{{usuario.nombre}}</td>
+                <td>{{usuario.apellido}}</td>
+                <td>{{usuario.email}}
+                <td>{{(usuario.vip) ? 'Si': 'No'}}</td>
+                <td>{{usuario.fechaCambioCategoria | date: 'd/M/yy'}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

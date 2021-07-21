@@ -1,0 +1,28 @@
+
+.contenedor{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 30%;
+    background-color: gainsboro;
+}
+
+.opciones{
+    display: flex;
+    padding: .5rem;
+    justify-content: space-evenly;
+    align-items: center;
+    p {
+        margin: 0;
+    }
+}
+
+.items{
+    max-height: 80vh;
+    overflow: auto;
+    
+}
+
+i {
+    margin: 0 .5rem;
+}

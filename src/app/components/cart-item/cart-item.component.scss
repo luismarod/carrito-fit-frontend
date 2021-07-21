@@ -1,0 +1,43 @@
+.contenedor {
+    display: flex;
+    padding: .4rem;
+    justify-content: space-between;
+
+    p{
+        margin: 0;
+    }
+    
+
+    img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .descripcion {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        
+    }
+
+    .cantidad-precio {
+        display: flex;
+        align-items: center;
+        margin: 0 .5rem;
+        font-weight: bolder;
+        
+
+        i {
+            margin: 0 .3rem;
+        }
+
+        .precio{
+            font-size: larger;
+            color: #01228F;
+        }
+
+        .fa-trash{
+            color: red;
+        }
+    }
+}

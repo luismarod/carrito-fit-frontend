@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { 
+    height: 100%; 
+    background-image: linear-gradient(to bottom right, black, #01228F);
+}
+body { margin: 0;   }
+
+.example-custom-date-class{
+    background: #a6bbff;
+}
+
+p, h1,h2,h3,h4,table {
+    font-family: 'Lora', serif !important; 
+}
+
+.button {
+    font-family: 'Lora', serif !important;
+    font-weight: bolder;
+    background-color: #01228F;
+    padding: .8rem 1rem;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.button-comprar {
+    background-color: gold ;
+    color: black;
+}
+
+a {
+    cursor: pointer;
+}
+
+

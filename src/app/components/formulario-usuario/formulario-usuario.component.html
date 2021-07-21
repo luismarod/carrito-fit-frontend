@@ -1,0 +1,32 @@
+<div class="contenedor">
+    <form (submit)="iniciarCesion(usuarioForm)" #usuarioForm="ngForm">
+
+        <h1>Ingresa a tu cuenta</h1>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" name="email" [ngModel]="usuario?.email" required minlength="1"
+                placeholder="Ej. pedromartinez@mail.com" #email="ngModel">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" name="password" [ngModel]="usuario?.password" required minlength="1"
+                placeholder="" #password="ngModel">
+        </mat-form-field>
+
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Elige la fecha de Compra</mat-label>
+            <input matInput [matDatepicker]="picker" name="fecha" [ngModel]="usuario?.fecha" required minlength="1"
+                placeholder="" #fecha="ngModel">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker [dateClass]="dateClass" #picker></mat-datepicker>
+        </mat-form-field>
+
+        <input class="button" type="submit" value="Iniciar Sesion" *ngIf="!crearCuenta">
+        <input class="button" type="submit" value="Crear Cuenta" *ngIf="crearCuenta">
+    </form>
+
+    <p *ngIf="crearCuenta">Ya tienes cuenta? <a [routerLink]="['/login']">Ingresa aquí</a></p>
+</div>
